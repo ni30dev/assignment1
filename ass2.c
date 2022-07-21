@@ -33,55 +33,103 @@ void swapNum2(int x, int y) // x:5, y:8
     printf("x: %d , y: %d", x, y);
 }
 
-void sumOf3Num()
+void sumOf3Num(int num) // 346
 {
-    int x, y, z, res;
-    printf("Enter 3 numer to be added :\n");
-    scanf("%d%d%d", &x, &y, &z);
-    res = x + y + z;
-    printf("%d+%d+%d = %d", x, y, z, res);
+    int div=num, mod, sum = 0;
+
+    while (div >=1)
+    {
+        mod = div % 10; // 6
+        printf("%d\t",mod);
+
+        div = div / 10; // 34
+        printf("%d\t",div);
+
+        sum += mod;
+        printf("%d\t",sum);
+        
+        printf("\n");
+    }
+    printf("Sum of digits of %d is %d", num, sum);
 }
 
 void printASCI(char c)
 {
-    printf("ASCI code for %c is %d",c,c);
+    printf("ASCI code for %c is %d", c, c);
+}
+
+void LSB_1(int num)
+{
+    int count = 1, check = 1;
+
+    while (check)
+    {
+        int i = num & 1;
+        if (i == 0)
+        {
+            num = num >> 1;
+            count++;
+            check = 1;
+        }
+        else
+        {
+            check = 0;
+        }
+    }
+
+    printf("LSB for first 1 is %d ", count);
 }
 
 void oddEvenBitwise(int num)
 {
-    printf("Nahi hua");
+    printf("Number %d is ", num);
+    printf(num & 1 == 1 ? "Odd" : "Even");
 }
 
-void sizeOfDataType () 
+void sizeOfDataType()
 {
-    printf("size of int is %d bytes.\n",sizeof(int));
-    printf("size of float is %d bytes.\n",sizeof(float));
-    printf("size of char is %d bytes.\n",sizeof(char));
-    printf("size of double is %d bytes.\n",sizeof(double));
+    printf("size of int is %d bytes.\n", sizeof(int));
+    printf("size of float is %d bytes.\n", sizeof(float));
+    printf("size of char is %d bytes.\n", sizeof(char));
+    printf("size of double is %d bytes.\n", sizeof(double));
 }
 
-void zeroatLast (int num) //num = 2341
+void zeroatLast(int num) // num = 2341
 {
-    int x = num%10;
+    int x = num % 10;
     int res = num - x;
-    printf("%d --> %d",num,res);
-}
-
-void appendNo (int num, int append) //num = 234
-{
-    int res = num*10+append;
     printf("%d --> %d", num, res);
 }
 
-void inr2usd (float inr)
+void appendNo(int num, int append) // num = 234
 {
-    float usd = inr/76.23;
-    printf("%.2f INR = %.2f$",inr, usd );
+    int res = num * 10 + append;
+    printf("%d --> %d", num, res);
 }
 
-void rotate(int num)  //num = 123 --> 312
+void inr2usd(float inr)
 {
-    printf("Integer ko array me convert ar k loop chalana tha, Nahi ho paaya")
+    float usd = inr / 76.23;
+    printf("%.2f INR = %.2f$", inr, usd);
+}
+
+void rotate(int num) // num = 345 --> 543
+{
+    int div=num, mod=num, rotatedNum=0;
+
+    mod = mod%10; // 345%10 --> 5
+    rotatedNum += 100*mod; // 0+ 100*5  --> 500
+    div = div/10; // 345/10 --> 34
+
+    mod = div%10; // 34%10 --> 4
+    rotatedNum += 10*mod; // 500+10*4 --> 540
+    div = div/10;
+
+    mod = div%10;
+    rotatedNum += 1*mod;
+
+    printf("%d after rotating will be %d", num, rotatedNum);
+
 }
 
 void main()
@@ -99,33 +147,32 @@ void main()
     swapNum2(4, 5);
 
     printf("\n\n##### Q5 #####\n");
-    sumOf3Num();
+    sumOf3Num(346);
 
     printf("\n\n##### Q6 #####\n");
     printASCI('A');
 
     printf("\n\n##### Q7 #####\n");
-    printf("Couldn't inderstand");
+    // Write a program to find the position of first 1 in LSB.
+    LSB_1(71456);
 
     printf("\n\n##### Q8 #####\n");
-    oddEvenBitwise(10);
-    
+    oddEvenBitwise(101);
+
     printf("\n\n##### Q9 #####\n");
     sizeOfDataType();
-    
+
     printf("\n\n##### Q10 #####\n");
     zeroatLast(2362);
-    
+
     printf("\n\n##### Q11 #####\n");
     appendNo(2362, 6);
-    
+
     printf("\n\n##### Q12 #####\n");
     inr2usd(1000);
-    
-    printf("\n\n##### Q13 #####\n");
-    rotate(12345);
-    
 
+    printf("\n\n##### Q13 #####\n");
+    rotate(345);
 
     printf("\n\n");
 }
