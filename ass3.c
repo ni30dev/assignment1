@@ -26,8 +26,10 @@ void oddEven(int num)
 
 void oddEven2(int num)
 {
-    // convert to binary
-    // if right most is 1 then odd if not even
+
+    printf("Number %d is ", num);
+    printf(num & 1 == 0 ? "Even Number" : "Odd Number");  // ye nahi chal raha hai, Neeche wala chal rahai, Ajeeb hai
+    // printf(num & 1 == 1 ? "Odd Number" : "Even Number");
 }
 
 void check3digit(float num)
@@ -228,7 +230,7 @@ int main()
 
     printf("\n\n##### Q4 #####\n");
     // Write a program to check whether a given number is an even number or an odd number without % operator.
-    oddEven2(651);
+    oddEven2(60);
 
     printf("\n\n##### Q5 #####\n");
     // Write a program to check whether a given number is an even number or an odd number without % operator.
@@ -252,7 +254,7 @@ int main()
 
     printf("\n\n##### Q10 #####\n");
     // Write a program which takes the cost price and selling price of a product from the user. Now calculate and print profit or loss percentage.
-    // profitLoss();
+    profitLoss();
 
     printf("\n\n##### Q11 #####\n");
     // Write a program to take marks of 5 subjects from the user. Assume marks are given out of 100 and passing marks is 33. Now display whether the candidate passed the examination or failed.
@@ -280,7 +282,7 @@ int main()
 
     printf("\n\n##### Q17 #####\n");
     //    Write a program which takes the length of the sides of a triangle as an input. Display whether the triangle is valid or not.
-    //  samajh nahi aaya
+    printf("samajh nahi aaya");
 
     printf("\n\n##### Q18 #####\n");
     // Write a program which takes the month number as an input and display number of days in that month
