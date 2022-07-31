@@ -76,9 +76,9 @@ void printBinary(int num) // 13
     printf("%d\t", mod);
 }
 
-void printOctal(int div) //158
+void printOctal(int div) // 158
 {
-    int  mod;
+    int mod;
     if (div == 0)
     {
         return;
@@ -87,6 +87,18 @@ void printOctal(int div) //158
     div = div / 8; // 158/2 = 19
     printOctal(div);
     printf("%d\t", mod);
+}
+
+void printReverse(int num)
+{
+    int mod, div;
+    if (num > 0)
+    {
+        div = num / 10;
+        mod = num % 10;
+        printf("%d", mod);
+        printReverse(div);
+    }    
 }
 
 int main()
@@ -128,8 +140,8 @@ int main()
     printOctal(158);
 
     printf("\n\n##### Q10 #####\n");
-    printf("Write a recursive function to print octal of a given decimal number\n");
-    printOctal(15832);
+    printf("Write a recursive function to print reverse of a given number\n");
+    printReverse(15832);
 
     printf("\n\n");
     return 0;
