@@ -135,7 +135,6 @@ int main()
 {
     printf("\n##### Q1 Q2 Q3 Q4 Q6 #####\n");
     printf("ALREADY MADE IN PREVIOUS ASSIGNMENT\n");
-    printf("### Q7, Q8, Q10 ####  need a method to check the elememt in array..\n\n");
 
     printf("\n##### Q4 #####\n");
     printf("Write a function to rotate an array by n position in d direction. The d is an indicative value for left or right. (For example, if array of size 5 is [32, 29, 40, 12, 70]; n is 2 and d is left, then the resulting array after left rotation 2 times is [40, 12, 70, 32, 29] )\n");
